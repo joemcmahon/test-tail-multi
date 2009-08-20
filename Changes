@@ -1,5 +1,8 @@
 Revision history for Perl extension Test::Tail::Multi.
 
+0.02  Fri Apr  8 15:21:01 2005 
+	- got the test names backwards in the POD (oops!)
+
 0.01  Thu Apr  7 07:55:33 2005
 	- original version; created by h2xs 1.23 with options
 		-AX -n Test::Tail::Multi

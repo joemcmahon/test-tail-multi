@@ -4,7 +4,7 @@ use 5.006001;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use File::Tail;
 use Test::Builder;
@@ -106,18 +106,18 @@ Test::Tail::Multi - execute code, monitor dynamic file contents
   add_file('file3', "decided to add file3 too");
 
   # Execute a command and check against output
-  like_contents {system('my_command -my_args")}   # Note no trailing comma!
+  contents_like {system('my_command -my_args")}   # Note no trailing comma!
                 qr/expected value/,
 		"got the expected output");
 
   # if code to execute is undef, check against previously captured new content
-  unlike_contents undef,                          # trailing command REQUIRED
+  contents_unlike undef,                          # trailing command REQUIRED
                   qr/unexpected text/,
 		  "unexpected stuff not found in same text");
 
   # Shorten the delay to 1 second.
   delay(1, "Now a 1 second delay");
-  like_contents({system('fast_command')},         # trailing comma in parens
+  contents_like(sub {system('fast_command')},     # trailing comma in parens
                 qr/expected/,
                 "this command runs faster");
                  
