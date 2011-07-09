@@ -5,8 +5,7 @@ WriteMakefile(
     NAME              => 'Test::Tail::Multi',
     VERSION_FROM      => 'lib/Test/Tail/Multi.pm', # finds $VERSION
     PREREQ_PM         => {'File::Tail' => 0,
-                          'Test::Builder::Tester' => 0,
-                          'Test::Builder' => 0}, # e.g., Module::Name => 1.1
+			  'Test::Simple' => 0.98}, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (AUTHOR         => 'Joe McMahon <joe@corp.yahoo.com>') : ()),
 );

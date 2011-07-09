@@ -1,4 +1,8 @@
 Revision history for Perl extension Test::Tail::Multi.
+0.03  Fri Jul  8 23:35:57 PDT 2011
+	- Fixed 04add_missing to work under newer revs of Test::Simple.
+	- Added prereq for newer version of Test::Simple so the test would
+	  work.
 
 0.02  Fri Apr  8 15:21:01 2005 
 	- got the test names backwards in the POD (oops!)
