@@ -1,4 +1,7 @@
 Revision history for Perl extension Test::Tail::Multi.
+0.05  Mon Jul 11 12:41:39 PDT 2011
+	- simplified the no-arguments use test; passes more dependably now.
+
 0.04  Fri Jul  8 23:35:57 PDT 2011
 	- Fixed 04add_missing to work under newer revs of Test::Simple.
 	- Added prereq for newer version of Test::Simple so the test would

@@ -1,14 +1,12 @@
-use Test::Builder::Tester tests=>1;
 use Test::More;
-SKIP: {
-skip "Running under Devel::Cover",1 if defined $Devel::Cover::{'import'};
-test_err("#   Failed test 'use Test::Tail::Multi files=>;'",
-         "#   at $0 line @{[line_num(+6)]}.",
-         "#     Tried to use 'Test::Tail::Multi files=>'.",
-         "#     Error:  You must specify at least one file to monitor at (eval 4) line 2",
-         "# BEGIN failed--compilation aborted at (eval 4) line 2.");
-test_out("not ok 1 - use Test::Tail::Multi files=>;");
+plan tests=>2;
 
-use_ok "Test::Tail::Multi files=>";
-test_test("failed as expected");
+SKIP: {
+    skip "Running under Devel::Cover",2 if defined $Devel::Cover::{'import'};
+    eval "use Test::Tail::Multi files=>";
+    my @result = split /\n/, $@;
+    like $result[0], qr/You must specify at least one file to monitor at .*? line \d+/,
+        'reason right';
+    like $result[1], qr/BEGIN failed--compilation aborted at .*? line \d+\./,
+        'location right';
 }
