@@ -9,4 +9,4 @@ is int @Test::Tail::Multi::monitored, 4, "right new number of entries";
 
 eval {add_file 'nonexistent', "try to add nonexistent one"};
 ok $@, 'failed as expected';
-like $@, qr/Error opening nonexistent: No such file or directory/, "right message";
+like $@, qr/Error opening nonexistent:/, "right message";
