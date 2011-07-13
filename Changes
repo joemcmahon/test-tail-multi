@@ -1,4 +1,7 @@
 Revision history for Perl extension Test::Tail::Multi.
+0.06  Tue Jul 12 21:39:02 PDT 2011
+	- simplified error check in 03add.t for localized error messages
+
 0.05  Mon Jul 11 12:41:39 PDT 2011
 	- simplified the no-arguments use test; passes more dependably now.
 
